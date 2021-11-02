@@ -2,7 +2,6 @@ package com.treinamento.todoapp.controller;
 
 import com.treinamento.todoapp.dto.TodoItemDto;
 import com.treinamento.todoapp.dto.TodoListDto;
-import com.treinamento.todoapp.model.TodoItem;
 import com.treinamento.todoapp.model.TodoList;
 import com.treinamento.todoapp.services.TodoService;
 import org.springframework.web.bind.annotation.*;

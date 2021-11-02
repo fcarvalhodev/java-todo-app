@@ -18,7 +18,7 @@ public class TodoItem {
     private boolean complete;
 
     @ManyToOne
-    @JoinColumn(name = "todo_list_id")
+    @JoinColumn(name = "todo_list_id", insertable = false, updatable = false)
     private TodoList todoList;
 
     public TodoItem(String item, boolean complete) {
