@@ -16,9 +16,17 @@ public class TodoList {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "todo_list_id")
+    @OneToMany(mappedBy = "todoList")
     private List<TodoItem> items = new ArrayList<>();
+
+    public TodoList(String name, List<TodoItem> items) {
+        this.name = name;
+        this.items = items;
+    }
+
+    public TodoList() {
+
+    }
 
     public Long getId() {
         return id;

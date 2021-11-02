@@ -18,8 +18,17 @@ public class TodoItem {
     private boolean complete;
 
     @ManyToOne
-    @JoinColumn(name = "todo_list_id", insertable = false, updatable = false)
+    @JoinColumn(name = "todo_list_id")
     private TodoList todoList;
+
+    public TodoItem(String item, boolean complete) {
+        this.item = item;
+        this.complete = complete;
+    }
+
+    public TodoItem() {
+
+    }
 
     public Long getId() {
         return id;
