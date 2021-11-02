@@ -20,6 +20,15 @@ public class TodoList {
     @JoinColumn(name = "todo_list_id")
     private List<TodoItem> items = new ArrayList<>();
 
+    public TodoList(String name, List<TodoItem> items) {
+        this.name = name;
+        this.items = items;
+    }
+
+    public TodoList() {
+
+    }
+
     public Long getId() {
         return id;
     }

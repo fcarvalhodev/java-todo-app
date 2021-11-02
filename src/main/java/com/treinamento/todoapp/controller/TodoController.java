@@ -1,10 +1,10 @@
 package com.treinamento.todoapp.controller;
 
+import com.treinamento.todoapp.dto.TodoItemDto;
+import com.treinamento.todoapp.dto.TodoListDto;
 import com.treinamento.todoapp.model.TodoList;
 import com.treinamento.todoapp.services.TodoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +19,23 @@ public class TodoController {
     }
 
     @GetMapping("/lists")
-    public List<TodoList> getTodoLists() {
+    public List<TodoListDto> getTodoLists() {
         return todoService.getTodoList();
     }
+
+    @RequestMapping(method = {RequestMethod.POST}, value = "/todos")
+    public void addTodo(@RequestBody TodoListDto todo){
+        todoService.addTodo(todo);
+    }
+
+    @RequestMapping(method = {RequestMethod.PUT}, value = "/todos/{id}")
+    public TodoList addTodoItem(@RequestBody TodoItemDto item, @PathVariable  Long id){
+        return todoService.addTodoItem(item, id);
+    }
+
+    @RequestMapping(method = {RequestMethod.DELETE}, value = "/todos/{id}")
+    public void deleteTodo(@PathVariable Long id){
+        todoService.deleteTodo(id);
+    }
+
 }

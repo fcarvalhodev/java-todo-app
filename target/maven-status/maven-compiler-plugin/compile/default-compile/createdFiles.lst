@@ -1,1 +1,7 @@
-com/treinamento/todoapp/todoapp/TodoappApplication.class
+com/treinamento/todoapp/model/TodoList.class
+com/treinamento/todoapp/repositories/TodoRepository.class
+com/treinamento/todoapp/services/TodoService.class
+com/treinamento/todoapp/controller/TodoController.class
+com/treinamento/todoapp/TodoappApplication.class
+com/treinamento/todoapp/config/JsonConfig.class
+com/treinamento/todoapp/model/TodoItem.class
